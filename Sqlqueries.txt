@@ -1,0 +1,12 @@
+select Name from Customer where Name like '%Joe';
+
+Select prd.Name ProductName from order ord join Customer cus on cus.CustomerId=ord=.CustomerId join orderproduct ordprd on ordprd.orderid=ord.orderid join product prd on prd.productId=ord.productId
+where cus.Name='Joe' and createdAt>cast('11/1/2016 as date);
+
+Select Sum(Price) TotalAmount from order ord join Customer cus on cus.CustomerId=ord=.CustomerId join orderproduct ordprd on ordprd.orderid=ord.orderid join product prd on prd.productId=ord.productId
+where cus.Name='Joe'
+
+
+Select Cus.Name,  Count(ordprd.ProductId) OVER(PARTITION BY  Cus.Name, ordprd.ProductId ) TotalAmount from order ord join Customer cus on cus.CustomerId=ord=.CustomerId join orderproduct ordprd on ordprd.orderid=ord.orderid join product prd on prd.productId=ord.productId
+
+
